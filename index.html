@@ -1,0 +1,955 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopify Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link"> Skip to main content </a>
+    <header>
+      <h1 class="visually-hidden">Shopify</h1>
+      <nav>
+        <div class="home">
+          <a href="https://shopify.com">
+            <picture>
+              <source
+                media="(min-width: 60rem)"
+                srcset="
+                  https://www.figma.com/file/W4IHXzpdgxrUMWuymS9R9i/Level-Up-Front-Hackathon?type=design&node-id=265-4290&mode=dev
+                "
+              />
+              <img
+                alt="Shopify"
+                src="https://www.figma.com/file/W4IHXzpdgxrUMWuymS9R9i/Level-Up-Front-Hackathon?type=design&node-id=429-3389&mode=devimg_girl.jpg"
+              />
+            </picture>
+          </a>
+        </div>
+        <div class="form-group--search">
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 13 14"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M8.82264 10.3833C7.89957 11.0841 6.74835 11.5 5.5 11.5C2.46243 11.5 0 9.03757 0 6C0 2.96243 2.46243 0.5 5.5 0.5C8.53757 0.5 11 2.96243 11 6C11 7.24835 10.5841 8.39957 9.8833 9.32264L12.7803 12.2197C13.0732 12.5126 13.0732 12.9874 12.7803 13.2803C12.4874 13.5732 12.0126 13.5732 11.7197 13.2803L8.82264 10.3833ZM9.5 6C9.5 8.20914 7.70914 10 5.5 10C3.29086 10 1.5 8.20914 1.5 6C1.5 3.79086 3.29086 2 5.5 2C7.70914 2 9.5 3.79086 9.5 6Z"
+              fill="#b5b5b5"
+            />
+          </svg>
+          <input
+            class="form-control search-form"
+            type="search"
+            name="search"
+            id="search"
+            aria-label="search products"
+            placeholder="Search"
+          />
+        </div>
+        <div id="user-menu">
+          <div>
+            <button
+              aria-expanded="false"
+              aria-controls="alert"
+              class="alert-trigger popover-trigger"
+              id="alert-trigger"
+              aria-label="open notifications"
+            >
+              <svg
+                aria-hidden="true"
+                class="icon"
+                width="41"
+                height="40"
+                viewBox="0 0 21 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7.75203 14.4239L5.3061 14.1427C3.45144 13.9295 2.92542 11.4844 4.52838 10.5274L4.5933 10.4886C5.466 9.96761 6.00045 9.02609 6.00045 8.00969V7.5C6.00045 5.01472 8.01517 3 10.5005 3C12.9857 3 15.0005 5.01472 15.0005 7.5V8.00969C15.0005 9.02609 15.5349 9.96761 16.4076 10.4886L16.4725 10.5274C18.0755 11.4844 17.5495 13.9295 15.6948 14.1427L13.152 14.435V14.8C13.152 16.2912 11.9432 17.5 10.452 17.5C8.96086 17.5 7.75203 16.2912 7.75203 14.8V14.4239ZM11.652 14.5H9.25203V14.8C9.25203 15.4627 9.78929 16 10.452 16C11.1148 16 11.652 15.4627 11.652 14.8V14.5ZM8.50045 13H12.5005L15.5235 12.6525C15.953 12.6032 16.0748 12.0369 15.7036 11.8153L15.6387 11.7766C15.5591 11.7291 15.4815 11.6793 15.4057 11.6273C15.2506 11.521 15.1036 11.4055 14.9651 11.2818C14.9405 11.2598 14.9162 11.2377 14.8922 11.2152C14.0144 10.395 13.5005 9.23833 13.5005 8.00969V7.5C13.5005 5.84315 12.1573 4.5 10.5005 4.5C8.8436 4.5 7.50045 5.84315 7.50045 7.5V8.00969C7.50045 9.23833 6.98651 10.395 6.10871 11.2152C6.08469 11.2377 6.06039 11.2598 6.03583 11.2818C5.89734 11.4055 5.75029 11.521 5.59523 11.6273C5.51945 11.6793 5.44176 11.7291 5.36222 11.7766L5.29729 11.8153C4.9261 12.0369 5.0479 12.6032 5.47739 12.6525L8.50045 13Z"
+                  fill="#fff"
+                />
+              </svg>
+            </button>
+            <div
+              role="region"
+              aria-labelledby="alert-trigger"
+              id="alert"
+              class="popover-container alert"
+            >
+              <div class="alert__header">
+                <h3 class="alert__header-h2">Alerts</h3>
+                <div class="alert__controls">
+                  <div class="btn-group">
+                    <button aria-label="sort alerts">
+                      <svg
+                        width="20"
+                        aria-hidden="true"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3 6C3 5.58579 3.33579 5.25 3.75 5.25H16.25C16.6642 5.25 17 5.58579 17 6C17 6.41421 16.6642 6.75 16.25 6.75H3.75C3.33579 6.75 3 6.41421 3 6Z"
+                          fill="#616161"
+                        />
+                        <path
+                          d="M6.75 14C6.75 13.5858 7.08579 13.25 7.5 13.25H12.5C12.9142 13.25 13.25 13.5858 13.25 14C13.25 14.4142 12.9142 14.75 12.5 14.75H7.5C7.08579 14.75 6.75 14.4142 6.75 14Z"
+                          fill="#616161"
+                        />
+                        <path
+                          d="M5.5 9.25C5.08579 9.25 4.75 9.58579 4.75 10C4.75 10.4142 5.08579 10.75 5.5 10.75H14.5C14.9142 10.75 15.25 10.4142 15.25 10C15.25 9.58579 14.9142 9.25 14.5 9.25H5.5Z"
+                          fill="#616161"
+                        />
+                      </svg>
+                    </button>
+                    <button aria-label="clear alerts">
+                      <svg
+                        width="20"
+                        aria-hidden="true"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13.2803 9.03033C13.5732 8.73744 13.5732 8.26256 13.2803 7.96967C12.9874 7.67678 12.5126 7.67678 12.2197 7.96967L9.25 10.9393L8.03033 9.71967C7.73744 9.42678 7.26256 9.42678 6.96967 9.71967C6.67678 10.0126 6.67678 10.4874 6.96967 10.7803L8.71967 12.5303C9.01256 12.8232 9.48744 12.8232 9.78033 12.5303L13.2803 9.03033Z"
+                          fill="#616161"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10ZM15.5 10C15.5 13.0376 13.0376 15.5 10 15.5C6.96243 15.5 4.5 13.0376 4.5 10C4.5 6.96243 6.96243 4.5 10 4.5C13.0376 4.5 15.5 6.96243 15.5 10Z"
+                          fill="#616161"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="alert__content">
+                <p class="alert__description">
+                  Alerts about your store and account will show here
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button
+              id="store-trigger"
+              class="store-trigger popover-trigger"
+              aria-expanded="false"
+              aria-controls="store-options"
+            >
+              <p
+                class="desktop text-light store-trigger__label text-bold"
+                id="store-label"
+              >
+                Davii Collections
+              </p>
+              <span class="store-trigger__icon" aria-hidden="true"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 28 28"
+                  fill="none"
+                >
+                  <rect width="28" height="28" rx="6" fill="#36FBA1" />
+                  <path
+                    d="M9.0419 18H6.21662V9.27273H9.13139C9.98651 9.27273 10.7209 9.44744 11.3345 9.79688C11.9482 10.1435 12.4183 10.642 12.745 11.2926C13.0746 11.9403 13.2393 12.7173 13.2393 13.6236C13.2393 14.5327 13.0732 15.3139 12.7408 15.9673C12.4112 16.6207 11.9339 17.1236 11.3089 17.4759C10.6839 17.8253 9.92827 18 9.0419 18ZM7.53338 16.8494H8.96946C9.63423 16.8494 10.1868 16.7244 10.6271 16.4744C11.0675 16.2216 11.397 15.8565 11.6158 15.3793C11.8345 14.8991 11.9439 14.3139 11.9439 13.6236C11.9439 12.9389 11.8345 12.358 11.6158 11.8807C11.3999 11.4034 11.0774 11.0412 10.6484 10.794C10.2195 10.5469 9.68679 10.4233 9.05043 10.4233H7.53338V16.8494ZM22.1254 12.1108H20.7958C20.7447 11.8267 20.6495 11.5767 20.5103 11.3608C20.3711 11.1449 20.2006 10.9616 19.9989 10.8111C19.7972 10.6605 19.5714 10.5469 19.3214 10.4702C19.0742 10.3935 18.8114 10.3551 18.533 10.3551C18.0302 10.3551 17.5799 10.4815 17.1822 10.7344C16.7873 10.9872 16.4748 11.358 16.2447 11.8466C16.0174 12.3352 15.9038 12.9318 15.9038 13.6364C15.9038 14.3466 16.0174 14.946 16.2447 15.4347C16.4748 15.9233 16.7887 16.2926 17.1864 16.5426C17.5842 16.7926 18.0316 16.9176 18.5288 16.9176C18.8043 16.9176 19.0657 16.8807 19.3129 16.8068C19.5629 16.7301 19.7887 16.6179 19.9904 16.4702C20.1921 16.3224 20.3626 16.142 20.5018 15.929C20.6438 15.7131 20.7418 15.4659 20.7958 15.1875L22.1254 15.1918C22.0543 15.6207 21.9165 16.0156 21.712 16.3764C21.5103 16.7344 21.2504 17.044 20.9322 17.3054C20.6168 17.5639 20.256 17.7642 19.8498 17.9062C19.4435 18.0483 19.0004 18.1193 18.5202 18.1193C17.7646 18.1193 17.0913 17.9403 16.5004 17.5824C15.9094 17.2216 15.4435 16.706 15.1026 16.0355C14.7646 15.3651 14.5955 14.5653 14.5955 13.6364C14.5955 12.7045 14.766 11.9048 15.1069 11.2372C15.4478 10.5668 15.9137 10.0526 16.5046 9.6946C17.0955 9.33381 17.7674 9.15341 18.5202 9.15341C18.9833 9.15341 19.4151 9.22017 19.8157 9.35369C20.2191 9.48437 20.5813 9.67756 20.9023 9.93324C21.2234 10.1861 21.489 10.4957 21.6992 10.8622C21.9094 11.2259 22.0515 11.642 22.1254 12.1108Z"
+                    fill="black"
+                    fill-opacity="0.4"
+                  /></svg
+              ></span>
+            </button>
+            <div
+              id="store-options"
+              role="region"
+              class="popover-container store-options"
+              aria-labelledby="store-label"
+            >
+              <div class="store-options__items">
+                <div class="store-options-header">
+                  <div class="store-options-header__text">
+                    <span
+                      ><svg
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="28"
+                        height="28"
+                        viewBox="0 0 28 28"
+                        fill="none"
+                      >
+                        <rect width="28" height="28" rx="6" fill="#36FBA1" />
+                        <path
+                          d="M9.0419 18H6.21662V9.27273H9.13139C9.98651 9.27273 10.7209 9.44744 11.3345 9.79688C11.9482 10.1435 12.4183 10.642 12.745 11.2926C13.0746 11.9403 13.2393 12.7173 13.2393 13.6236C13.2393 14.5327 13.0732 15.3139 12.7408 15.9673C12.4112 16.6207 11.9339 17.1236 11.3089 17.4759C10.6839 17.8253 9.92827 18 9.0419 18ZM7.53338 16.8494H8.96946C9.63423 16.8494 10.1868 16.7244 10.6271 16.4744C11.0675 16.2216 11.397 15.8565 11.6158 15.3793C11.8345 14.8991 11.9439 14.3139 11.9439 13.6236C11.9439 12.9389 11.8345 12.358 11.6158 11.8807C11.3999 11.4034 11.0774 11.0412 10.6484 10.794C10.2195 10.5469 9.68679 10.4233 9.05043 10.4233H7.53338V16.8494ZM22.1254 12.1108H20.7958C20.7447 11.8267 20.6495 11.5767 20.5103 11.3608C20.3711 11.1449 20.2006 10.9616 19.9989 10.8111C19.7972 10.6605 19.5714 10.5469 19.3214 10.4702C19.0742 10.3935 18.8114 10.3551 18.533 10.3551C18.0302 10.3551 17.5799 10.4815 17.1822 10.7344C16.7873 10.9872 16.4748 11.358 16.2447 11.8466C16.0174 12.3352 15.9038 12.9318 15.9038 13.6364C15.9038 14.3466 16.0174 14.946 16.2447 15.4347C16.4748 15.9233 16.7887 16.2926 17.1864 16.5426C17.5842 16.7926 18.0316 16.9176 18.5288 16.9176C18.8043 16.9176 19.0657 16.8807 19.3129 16.8068C19.5629 16.7301 19.7887 16.6179 19.9904 16.4702C20.1921 16.3224 20.3626 16.142 20.5018 15.929C20.6438 15.7131 20.7418 15.4659 20.7958 15.1875L22.1254 15.1918C22.0543 15.6207 21.9165 16.0156 21.712 16.3764C21.5103 16.7344 21.2504 17.044 20.9322 17.3054C20.6168 17.5639 20.256 17.7642 19.8498 17.9062C19.4435 18.0483 19.0004 18.1193 18.5202 18.1193C17.7646 18.1193 17.0913 17.9403 16.5004 17.5824C15.9094 17.2216 15.4435 16.706 15.1026 16.0355C14.7646 15.3651 14.5955 14.5653 14.5955 13.6364C14.5955 12.7045 14.766 11.9048 15.1069 11.2372C15.4478 10.5668 15.9137 10.0526 16.5046 9.6946C17.0955 9.33381 17.7674 9.15341 18.5202 9.15341C18.9833 9.15341 19.4151 9.22017 19.8157 9.35369C20.2191 9.48437 20.5813 9.67756 20.9023 9.93324C21.2234 10.1861 21.489 10.4957 21.6992 10.8622C21.9094 11.2259 22.0515 11.642 22.1254 12.1108Z"
+                          fill="black"
+                          fill-opacity="0.4"
+                        /></svg
+                    ></span>
+                    <p
+                      class="text-dark text-bold store-trigger__label"
+                      id="store-label"
+                    >
+                      Davii Collections
+                    </p>
+                  </div>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13.3332 4L5.99984 11.3333L2.6665 8"
+                      stroke="#303030"
+                      stroke-width="1.33333"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+
+                <div class="store-options__item">
+                  <a
+                    href="https://admin.shopify.com"
+                    role="menuitem"
+                    class="btn--has-icon"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M13.257 3H6.74302C6.35944 3 5.9971 3.17611 5.76012 3.47772L3.37394 6.51468C3.13169 6.823 3 7.20375 3 7.59586V8.25C3 9.31867 3.60958 10.245 4.5 10.7001V15.25C4.5 16.2165 5.2835 17 6.25 17H13.75C14.7165 17 15.5 16.2165 15.5 15.25V10.7001C16.3904 10.245 17 9.31867 17 8.25V7.76879C17 7.26465 16.8307 6.77511 16.5192 6.3787L14.2399 3.47772C14.0029 3.17611 13.6406 3 13.257 3ZM13 15.5H13.75C13.8881 15.5 14 15.3881 14 15.25V11C13.212 11 12.5014 10.6686 12 10.1375C11.4986 10.6686 10.788 11 10 11C9.21199 11 8.50138 10.6686 8 10.1375C7.49862 10.6686 6.78801 11 6 11V15.25C6 15.3881 6.11193 15.5 6.25 15.5H10V13C10 12.4477 10.4477 12 11 12H12C12.5523 12 13 12.4477 13 13V15.5ZM6 9.5H5.75C5.05964 9.5 4.5 8.94036 4.5 8.25V7.59586C4.5 7.53985 4.51881 7.48545 4.55342 7.44141L6.86453 4.5H13.1355L15.3397 7.30543C15.4436 7.43757 15.5 7.60075 15.5 7.76879V8.25C15.5 8.94036 14.9404 9.5 14.25 9.5H14C13.3096 9.5 12.75 8.94036 12.75 8.25V7.75C12.75 7.33579 12.4142 7 12 7C11.5858 7 11.25 7.33579 11.25 7.75V8.25C11.25 8.94036 10.6904 9.5 10 9.5C9.30964 9.5 8.75 8.94036 8.75 8.25V7.75C8.75 7.33579 8.41421 7 8 7C7.58579 7 7.25 7.33579 7.25 7.75V8.25C7.25 8.94036 6.69036 9.5 6 9.5Z"
+                        fill="#303030"
+                      />
+                    </svg>
+
+                    <span>All stores</span>
+                  </a>
+                </div>
+              </div>
+              <div class="separator" role="separator" aria-hidden="true"></div>
+
+              <ul class="store-options__items">
+                <li class="store-options__item">
+                  <a href="https://admin.shopify.com" role="menuitem"
+                    >Help Center</a
+                  >
+                </li>
+                <li class="store-options__item">
+                  <a href="https://admin.shopify.com" role="menuitem"
+                    >Changelog</a
+                  >
+                </li>
+                <li class="store-options__item">
+                  <a href="https://admin.shopify.com" role="menuitem"
+                    >Community forums</a
+                  >
+                </li>
+                <li class="store-options__item">
+                  <a href="https://admin.shopify.com" role="menuitem"
+                    >Hire a Shopify Partner</a
+                  >
+                </li>
+                <li class="store-options__item">
+                  <a href="https://admin.shopify.com" role="menuitem"
+                    >Keyboard stortcuts</a
+                  >
+                </li>
+              </ul>
+              <div class="separator" role="separator" aria-hidden="true"></div>
+              <ul class="store-options__items">
+                <li class="store-options__item">
+                  <div class="store-options__useremail">
+                    <a href="https://admin.shopify.com" role="menuitem">
+                      <p id="username" class="text-bold">David Micheal</p>
+                      <span class="email-handle">davidmicheal@gmail.com</span>
+                    </a>
+                  </div>
+                </li>
+                <li class="store-options__item">
+                  <a href="https://admin.shopify.com" role="menuitem"
+                    >Manage account</a
+                  >
+                </li>
+                <li class="store-options__item">
+                  <a href="https://admin.shopify.com" role="menuitem"
+                    >Log out</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main id="main">
+      <div class="container">
+        <div class="snack-bar bg-dark" role="alert">
+          <div class="snack-bar__header">
+            <p class="text-light">
+              Extend your trial for $1/month for 3 months on select plans.
+            </p>
+            <a
+              href="https://shopify.com/pricing"
+              class="btn btn-outlined text-bold"
+              >Select a plan</a
+            >
+          </div>
+          <button class="btn--cancel" aria-label="dismiss">
+            <svg
+              aria-hidden="true"
+              class="icon"
+              width="41"
+              height="40"
+              viewBox="0 0 21 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.4697 15.0303C14.7626 15.3232 15.2374 15.3232 15.5303 15.0303C15.8232 14.7374 15.8232 14.2626 15.5303 13.9697L11.5607 10L15.5303 6.03033C15.8232 5.73744 15.8232 5.26256 15.5303 4.96967C15.2374 4.67678 14.7626 4.67678 14.4697 4.96967L10.5 8.93934L6.53033 4.96967C6.23744 4.67678 5.76256 4.67678 5.46967 4.96967C5.17678 5.26256 5.17678 5.73744 5.46967 6.03033L9.43934 10L5.46967 13.9697C5.17678 14.2626 5.17678 14.7374 5.46967 15.0303C5.76256 15.3232 6.23744 15.3232 6.53033 15.0303L10.5 11.0607L14.4697 15.0303Z"
+                fill="#fff"
+              />
+            </svg>
+          </button>
+        </div>
+        <section class="setup-guide">
+          <div class="setup-guide-header">
+            <div class="setup-guide-header__content">
+              <h2
+                class="setup-guide-header__text font-large text-bold"
+                id="guide"
+              >
+                Setup guide
+              </h2>
+              <p class="setup-guide-header__description font-normal">
+                Use this personalised guide to get your store up and running.
+              </p>
+              <div class="setup-guide__progress font-small">
+                <p class="visually-hidden" id="progress" aria-live="polite">
+                  you have completed <span id="completed-items">0</span> of 5
+                  steps
+                </p>
+                <p aria-hidden="true">
+                  <span id="visible-completd-items">0</span> / 5 completed
+                </p>
+                <div class="setup-guide__progress-bar">
+                  <span class="setup-guide__progress-marker"></span>
+                </div>
+              </div>
+            </div>
+
+            <button
+              aria-expanded="false"
+              aria-label="expand steps"
+              class="setup-guide-trigger collapsible-trigger"
+              id="setup-guide-trigger"
+            >
+              <svg
+                aria-hidden="true"
+                width="41"
+                height="40"
+                viewBox="0 0 21 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                id="trigger-closed"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M6.21967 8.46967C6.51256 8.17678 6.98744 8.17678 7.28033 8.46967L10.75 11.9393L14.2197 8.46967C14.5126 8.17678 14.9874 8.17678 15.2803 8.46967C15.5732 8.76256 15.5732 9.23744 15.2803 9.53033L11.2803 13.5303C10.9874 13.8232 10.5126 13.8232 10.2197 13.5303L6.21967 9.53033C5.92678 9.23744 5.92678 8.76256 6.21967 8.46967Z"
+                  fill="#000"
+                />
+              </svg>
+              <svg
+                aria-hidden="true"
+                width="41"
+                height="40"
+                viewBox="0 0 21 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                id="trigger-open"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M15.0303 12.2803C14.7374 12.5732 14.2626 12.5732 13.9697 12.2803L10.5 8.81066L7.03033 12.2803C6.73744 12.5732 6.26256 12.5732 5.96967 12.2803C5.67678 11.9874 5.67678 11.5126 5.96967 11.2197L9.96967 7.21967C10.2626 6.92678 10.7374 6.92678 11.0303 7.21967L15.0303 11.2197C15.3232 11.5126 15.3232 11.9874 15.0303 12.2803Z"
+                  fill="#000"
+                />
+              </svg>
+            </button>
+          </div>
+          <div id="setup-guide-collapsible">
+            <ul
+              class="expandable"
+              aria-describedby="#guide"
+              class="setup-guide-items"
+            >
+              <li class="setup-guide-item">
+                <div class="setup-guide-content-wrapper">
+                  <button
+                    role="checkbox"
+                    class="setup-guide-checkbox"
+                    aria-checked="false"
+                    data-id="customize-store-trigger"
+                    aria-live="polite"
+                    aria-label="Customize your online store"
+                  >
+                    <svg
+                      class="checkbox--state-default"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="#8A8A8A"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-dasharray="5 5"
+                      />
+                    </svg>
+                    <svg
+                      aria-hidden="true"
+                      class="checkbox--state-loading hidden"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M22.0004 12C22.0004 13.9778 21.4139 15.9112 20.3151 17.5557C19.2162 19.2002 17.6545 20.4819 15.8272 21.2388C13.9999 21.9957 11.9893 22.1937 10.0495 21.8079C8.10965 21.422 6.32782 20.4696 4.9293 19.0711C3.53077 17.6725 2.57837 15.8907 2.19251 13.9509C1.80666 12.0111 2.00469 10.0004 2.76157 8.17317C3.51845 6.3459 4.80017 4.78412 6.44466 3.6853C8.08916 2.58649 10.0226 2 12.0004 2"
+                        stroke="#1C181D"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <svg
+                      aria-hidden="true"
+                      class="checkbox--state-done hidden"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="11.9996"
+                        cy="12"
+                        r="10"
+                        fill="#1C181D"
+                        stroke="#1C181D"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M16.8162 8.64149C17.0603 8.88557 17.0603 9.2813 16.8162 9.52538L11.3995 14.942C11.1555 15.1861 10.7597 15.1861 10.5157 14.942L7.80733 12.2337C7.56325 11.9896 7.56325 11.5939 7.80733 11.3498C8.0514 11.1057 8.44713 11.1057 8.69121 11.3498L10.9576 13.6162L15.9323 8.64149C16.1764 8.39742 16.5721 8.39742 16.8162 8.64149Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </button>
+                  <div class="setup-guide-item__content">
+                    <h3 class="accordion-trigger">
+                      <button
+                        aria-expanded="false"
+                        aria-controls="customise-store"
+                        id="customize-store-trigger"
+                      >
+                        Customize your online store
+                      </button>
+                    </h3>
+                    <div class="expandable">
+                      <div
+                        id="customize-store"
+                        class="collapsible collapsible-accordion accordion-content"
+                      >
+                        <p class="setup-guide-item__description font-small">
+                          Choose a theme and add your logo, colors, and images
+                          to reflect your brand.
+                          <a href="#" class="text-bold">Learn more</a>
+                        </p>
+                        <button type="button" class="btn-contained">
+                          Customize theme
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <img
+                  src="https://crushingit.tech/hackathon-assets/customise-store.png"
+                  alt=""
+                  class="desktop setup-guide-item__illustration"
+                />
+              </li>
+              <li class="setup-guide-item">
+                <div class="setup-guide-content-wrapper">
+                  <button
+                    role="checkbox"
+                    class="setup-guide-checkbox"
+                    aria-checked="false"
+                    data-id="add-product-trigger"
+                    aria-live="polite"
+                    aria-label="Add your first product"
+                  >
+                    <svg
+                      class="checkbox--state-default"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="#8A8A8A"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-dasharray="5 5"
+                      />
+                    </svg>
+                    <svg
+                      aria-hidden="true"
+                      class="checkbox--state-loading hidden"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M22.0004 12C22.0004 13.9778 21.4139 15.9112 20.3151 17.5557C19.2162 19.2002 17.6545 20.4819 15.8272 21.2388C13.9999 21.9957 11.9893 22.1937 10.0495 21.8079C8.10965 21.422 6.32782 20.4696 4.9293 19.0711C3.53077 17.6725 2.57837 15.8907 2.19251 13.9509C1.80666 12.0111 2.00469 10.0004 2.76157 8.17317C3.51845 6.3459 4.80017 4.78412 6.44466 3.6853C8.08916 2.58649 10.0226 2 12.0004 2"
+                        stroke="#1C181D"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <svg
+                      aria-hidden="true"
+                      class="checkbox--state-done hidden"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="11.9996"
+                        cy="12"
+                        r="10"
+                        fill="#1C181D"
+                        stroke="#1C181D"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M16.8162 8.64149C17.0603 8.88557 17.0603 9.2813 16.8162 9.52538L11.3995 14.942C11.1555 15.1861 10.7597 15.1861 10.5157 14.942L7.80733 12.2337C7.56325 11.9896 7.56325 11.5939 7.80733 11.3498C8.0514 11.1057 8.44713 11.1057 8.69121 11.3498L10.9576 13.6162L15.9323 8.64149C16.1764 8.39742 16.5721 8.39742 16.8162 8.64149Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </button>
+                  <div class="setup-guide-item__content">
+                    <h3 class="accordion-trigger">
+                      <button
+                        aria-controls="add-product"
+                        aria-expanded="false"
+                        id="add-product-trigger"
+                      >
+                        Add your first product
+                      </button>
+                    </h3>
+                    <div class="expandable">
+                      <div
+                        id="add-product"
+                        class="collapsible collapsible-accordion accordion-content"
+                      >
+                        <p class="setup-guide-item__description font-small">
+                          Write a description, add photos, and set pricing for
+                          the products you plan to sell.
+                          <a href="#" class="text-bold">Learn more</a>
+                        </p>
+                        <div class="btn-group">
+                          <button type="button" class="btn-contained">
+                            Add product
+                          </button>
+                          <button type="button" class="btn-text">
+                            Import product
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <img
+                  src="https://crushingit.tech/hackathon-assets/product.png"
+                  alt=""
+                  class="desktop setup-guide-item__illustration"
+                />
+              </li>
+              <li class="setup-guide-item">
+                <div class="setup-guide-content-wrapper">
+                  <button
+                    role="checkbox"
+                    class="setup-guide-checkbox"
+                    aria-checked="false"
+                    data-id="add-domain-trigger"
+                    aria-live="polite"
+                    aria-label="Add a custom domain"
+                  >
+                    <svg
+                      class="checkbox--state-default"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="#8A8A8A"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-dasharray="5 5"
+                      />
+                    </svg>
+                    <svg
+                      aria-hidden="true"
+                      class="checkbox--state-loading hidden"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M22.0004 12C22.0004 13.9778 21.4139 15.9112 20.3151 17.5557C19.2162 19.2002 17.6545 20.4819 15.8272 21.2388C13.9999 21.9957 11.9893 22.1937 10.0495 21.8079C8.10965 21.422 6.32782 20.4696 4.9293 19.0711C3.53077 17.6725 2.57837 15.8907 2.19251 13.9509C1.80666 12.0111 2.00469 10.0004 2.76157 8.17317C3.51845 6.3459 4.80017 4.78412 6.44466 3.6853C8.08916 2.58649 10.0226 2 12.0004 2"
+                        stroke="#1C181D"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <svg
+                      aria-hidden="true"
+                      class="checkbox--state-done hidden"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="11.9996"
+                        cy="12"
+                        r="10"
+                        fill="#1C181D"
+                        stroke="#1C181D"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M16.8162 8.64149C17.0603 8.88557 17.0603 9.2813 16.8162 9.52538L11.3995 14.942C11.1555 15.1861 10.7597 15.1861 10.5157 14.942L7.80733 12.2337C7.56325 11.9896 7.56325 11.5939 7.80733 11.3498C8.0514 11.1057 8.44713 11.1057 8.69121 11.3498L10.9576 13.6162L15.9323 8.64149C16.1764 8.39742 16.5721 8.39742 16.8162 8.64149Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </button>
+                  <div class="setup-guide-item__content">
+                    <h3 class="accordion-trigger">
+                      <button
+                        aria-controls="add-domain"
+                        aria-expanded="false"
+                        id="add-domain-trigger"
+                      >
+                        Add a custom domain
+                      </button>
+                    </h3>
+                    <div class="expandable">
+                      <div
+                        id="add-domain"
+                        class="collapsible collapsible-accordion accordion-content"
+                      >
+                        <p class="setup-guide-item__description font-small">
+                          Your current domain is 222219.myshopify.com but you
+                          can add a custom domain to help customers find your
+                          online store.
+                          <a href="#" class="text-bold">Learn more</a>
+                        </p>
+                        <button type="button" class="btn-contained">
+                          Add domain
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <img
+                  src="https://crushingit.tech/hackathon-assets/website.png"
+                  alt=""
+                  class="desktop setup-guide-item__illustration"
+                />
+              </li>
+              <li class="setup-guide-item">
+                <div class="setup-guide-content-wrapper">
+                  <button
+                    role="checkbox"
+                    class="setup-guide-checkbox"
+                    aria-checked="false"
+                    data-id="store-name-trigger"
+                    aria-live="polite"
+                    aria-label="Name your store"
+                  >
+                    <svg
+                      class="checkbox--state-default"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="#8A8A8A"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-dasharray="5 5"
+                      />
+                    </svg>
+                    <svg
+                      aria-hidden="true"
+                      class="checkbox--state-loading hidden"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M22.0004 12C22.0004 13.9778 21.4139 15.9112 20.3151 17.5557C19.2162 19.2002 17.6545 20.4819 15.8272 21.2388C13.9999 21.9957 11.9893 22.1937 10.0495 21.8079C8.10965 21.422 6.32782 20.4696 4.9293 19.0711C3.53077 17.6725 2.57837 15.8907 2.19251 13.9509C1.80666 12.0111 2.00469 10.0004 2.76157 8.17317C3.51845 6.3459 4.80017 4.78412 6.44466 3.6853C8.08916 2.58649 10.0226 2 12.0004 2"
+                        stroke="#1C181D"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <svg
+                      aria-hidden="true"
+                      class="checkbox--state-done hidden"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="11.9996"
+                        cy="12"
+                        r="10"
+                        fill="#1C181D"
+                        stroke="#1C181D"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M16.8162 8.64149C17.0603 8.88557 17.0603 9.2813 16.8162 9.52538L11.3995 14.942C11.1555 15.1861 10.7597 15.1861 10.5157 14.942L7.80733 12.2337C7.56325 11.9896 7.56325 11.5939 7.80733 11.3498C8.0514 11.1057 8.44713 11.1057 8.69121 11.3498L10.9576 13.6162L15.9323 8.64149C16.1764 8.39742 16.5721 8.39742 16.8162 8.64149Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </button>
+                  <div class="setup-guide-item__content">
+                    <h3 class="accordion-trigger">
+                      <button
+                        aria-controls="name-store"
+                        aria-expanded="false"
+                        id="store-name-trigger"
+                      >
+                        Name your store
+                      </button>
+                    </h3>
+                    <div class="expandable">
+                      <div
+                        id="name-store"
+                        class="collapsible collapsible-accordion accordion-content"
+                      >
+                        <p class="setup-guide-item__description font-small">
+                          Your temporary store name is currently Davii
+                          collections. The store name appears in your admin and
+                          your online store.
+                          <a href="#" class="text-bold">Learn more</a>
+                        </p>
+                        <button type="button" class="btn-contained">
+                          Name store
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <img
+                  src="https://crushingit.tech/hackathon-assets/name-store.png"
+                  alt=""
+                  class="desktop setup-guide-item__illustration"
+                />
+              </li>
+              <li class="setup-guide-item">
+                <div class="setup-guide-content-wrapper">
+                  <button
+                    role="checkbox"
+                    class="setup-guide-checkbox"
+                    aria-checked="false"
+                    data-id="setup-payment-trigger"
+                    aria-live="polite"
+                    aria-label="Set up a payment provider"
+                  >
+                    <svg
+                      class="checkbox--state-default"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="#8A8A8A"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-dasharray="5 5"
+                      />
+                    </svg>
+                    <svg
+                      aria-hidden="true"
+                      class="checkbox--state-loading hidden"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M22.0004 12C22.0004 13.9778 21.4139 15.9112 20.3151 17.5557C19.2162 19.2002 17.6545 20.4819 15.8272 21.2388C13.9999 21.9957 11.9893 22.1937 10.0495 21.8079C8.10965 21.422 6.32782 20.4696 4.9293 19.0711C3.53077 17.6725 2.57837 15.8907 2.19251 13.9509C1.80666 12.0111 2.00469 10.0004 2.76157 8.17317C3.51845 6.3459 4.80017 4.78412 6.44466 3.6853C8.08916 2.58649 10.0226 2 12.0004 2"
+                        stroke="#1C181D"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <svg
+                      aria-hidden="true"
+                      class="checkbox--state-done hidden"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="11.9996"
+                        cy="12"
+                        r="10"
+                        fill="#1C181D"
+                        stroke="#1C181D"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M16.8162 8.64149C17.0603 8.88557 17.0603 9.2813 16.8162 9.52538L11.3995 14.942C11.1555 15.1861 10.7597 15.1861 10.5157 14.942L7.80733 12.2337C7.56325 11.9896 7.56325 11.5939 7.80733 11.3498C8.0514 11.1057 8.44713 11.1057 8.69121 11.3498L10.9576 13.6162L15.9323 8.64149C16.1764 8.39742 16.5721 8.39742 16.8162 8.64149Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </button>
+                  <div class="setup-guide-item__content">
+                    <h3 class="accordion-trigger">
+                      <button
+                        aria-controls="setup-payment"
+                        aria-expanded="false"
+                        id="setup-payment-trigger"
+                      >
+                        Step up a payment provider
+                      </button>
+                    </h3>
+                    <div class="expandable">
+                      <div
+                        id="setup-payment"
+                        class="collapsible collapsible-accordion accordion-content"
+                      >
+                        <p class="setup-guide-item__description font-small">
+                          Choose a payment provider to start accepting payments.
+                          You&apos;ll need to create an account with the payment
+                          provider and set it up with your Shopify store.
+                          <a href="#" class="text-bold">Learn more</a>
+                        </p>
+                        <button type="button" class="btn-contained">
+                          Set up payment
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <img
+                  src="https://crushingit.tech/hackathon-assets/payment.png"
+                  alt=""
+                  class="desktop setup-guide-item__illustration"
+                />
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
