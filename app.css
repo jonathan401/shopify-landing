@@ -776,11 +776,11 @@ button[role="checkbox"]:focus {
 }
 
 .checkbox--state-loading {
-  animation: spin 150ms linear infinite;
+  animation: spin 250ms linear infinite;
 }
 
 .checkbox--state-done {
-  animation: spinGrow 150ms linear;
+  animation: spinGrow 250ms linear;
 }
 
 @keyframes spin {
