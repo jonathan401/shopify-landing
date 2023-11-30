@@ -733,7 +733,7 @@ nav {
   overflow: visible;
 }
 
-.accordion-trigger:has(button[aria-expanded="true"]) {
+.accordion-trigger:has(button[aria-expanded="true"]) button {
   font-weight: 600;
 }
 
