@@ -118,13 +118,15 @@ const closeAccordions = (target) => {
     trigger.setAttribute("aria-expanded", false);
   });
   target.setAttribute("aria-expanded", true);
+
+  // target.focus();
 };
 
-const handleEscapePress = (event) => {
+const handleEscapePress = (event, trigger) => {
   if (event.key === "Escape") {
-    // console.log("hi");
-    storeTrigger.setAttribute("aria-expanded", false);
-    storeTrigger.focus();
+    console.log(trigger);
+    trigger.setAttribute("aria-expanded", false);
+    trigger.focus();
   }
 };
 
@@ -139,8 +141,20 @@ const handleNotificationClick = (event) => {
     isExpanded = true;
   }
   notificationBell.setAttribute("aria-expanded", isExpanded);
-
   storeTrigger.setAttribute("aria-expanded", false);
+
+  // add event listener to handle escape keypress
+  if (isExpanded) {
+    const contentId = notificationBell.getAttribute("aria-controls");
+    const content = document.getElementById(contentId);
+    const buttons = content.querySelectorAll("button");
+    const header = content.querySelector(".alert__header-h2");
+
+    // debug: The button element is not being focused
+    content.addEventListener("keyup", (e) => {
+      handleEscapePress(e, notificationBell);
+    });
+  }
 };
 
 const handleStoreOptionsClick = (event) => {
@@ -191,7 +205,9 @@ const handleStoreOptionsClick = (event) => {
   if (isExpanded) {
     // console.log(menuItems);
     menuItems[0].focus();
-    content.addEventListener("keyup", (e) => handleEscapePress(e));
+    content.addEventListener("keyup", (e) =>
+      handleEscapePress(e, storeTrigger)
+    );
     menuItems.forEach((item, itemIndex) => {
       item.addEventListener("keyup", (e) => {
         handleArrowPress(e, itemIndex);
@@ -231,6 +247,9 @@ setupTrigger.addEventListener("click", (e) => {
   }
 
   setupTrigger.setAttribute("aria-expanded", isExpanded);
+  if (isExpanded) {
+    accordionTriggers[0].setAttribute("aria-expanded", true);
+  }
 });
 
 snackBarDismiss.addEventListener("click", (e) => {

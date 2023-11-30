@@ -159,6 +159,11 @@ input[type="search"]:focus,
   gap: 8px;
 }
 
+.home a:focus {
+  outline: 2px solid var(--white);
+  outline-offset: 7px;
+}
+
 .hidden {
   display: none !important;
 }
@@ -221,7 +226,7 @@ ul {
   height: 32px;
 }
 
-.desktop {
+.visible-desktop {
   display: none;
 }
 
@@ -279,7 +284,8 @@ button,
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 6px 12px;
+  /* padding: 6px 12px; */
+  padding: 0.375rem 0.75rem;
   border-radius: 6px;
   cursor: pointer;
   font-family: Inter, sans-serif;
@@ -577,17 +583,16 @@ nav {
 .setup-guide {
   display: flex;
   flex-direction: column;
-  /* gap: 1rem; */
-  padding: 0.5rem 0.125rem;
+  padding: 0.5rem;
   background-color: var(--white);
   margin: 1rem 0;
-  /* border-radius: var(--rounded-lg); */
 }
 
 .setup-guide-header {
   display: flex;
   padding: 8px;
   justify-content: space-between;
+  line-height: 140%;
 }
 
 .setup-guide-header__content {
@@ -599,15 +604,18 @@ nav {
 .setup-guide-trigger {
   align-self: flex-start;
   padding: 4px;
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
   /* background-color: red; */
 }
 
 /* trigger states */
-.setup-guide-trigger[aria-expanded="false"] > #trigger-open {
+.setup-guide-trigger[aria-expanded] > #trigger-open {
   display: none;
 }
 
-.setup-guide-trigger[aria-expanded="false"] > #trigger-closed {
+.setup-guide-trigger[aria-expanded] > #trigger-closed {
   display: block;
 }
 
@@ -622,8 +630,8 @@ nav {
 /* .collapsible-trigger[aria-expanded="true"] + .co */
 
 .setup-guide-trigger svg {
-  width: 28px;
-  height: 28px;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .setup-guide-trigger:active {
@@ -642,15 +650,15 @@ nav {
 #setup-guide-collapsible {
   overflow: hidden;
   display: grid;
+  visibility: hidden;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 250ms ease, opacity 150ms ease;
-  opacity: 0;
+  transition: grid-template-rows 250ms ease-out;
 }
 
 .setup-guide:has(#setup-guide-trigger[aria-expanded="true"])
   #setup-guide-collapsible {
   grid-template-rows: 1fr;
-  opacity: 1;
+  visibility: visible;
 }
 
 .setup-guide-items {
@@ -662,6 +670,7 @@ nav {
 .setup-guide-item {
   position: relative;
   display: flex;
+  padding: 0 0.5rem;
   gap: 0.125rem;
   border-radius: var(--rounded-sm);
 }
@@ -671,7 +680,7 @@ nav {
   align-items: flex-start;
   display: flex;
   gap: 0.8rem;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
 }
 
 .setup-guide-item:has(button[aria-expanded="true"]) {
@@ -713,17 +722,19 @@ nav {
 .accordion-trigger + .expandable {
   display: grid;
   overflow: hidden;
+  opacity: 0;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 400ms ease;
-}
-
-.accordion-trigger:has(button[aria-expanded="true"]) {
-  font-weight: 600;
+  transition: grid-template-rows 300ms ease, opacity 300ms ease;
 }
 
 .accordion-trigger:has(button[aria-expanded="true"]) + .expandable {
   grid-template-rows: 1fr;
+  opacity: 1;
   overflow: visible;
+}
+
+.accordion-trigger:has(button[aria-expanded="true"]) {
+  font-weight: 600;
 }
 
 .setup-guide-content-wrapper:has(
@@ -744,7 +755,8 @@ nav {
 }
 
 .accordion-trigger button:focus {
-  outline: 2px solid var(--focused);
+  outline: 2px solid var(--s200) !important;
+  outline-offset: 2px;
 }
 
 .collapsible-accordion {
@@ -754,6 +766,7 @@ nav {
 }
 
 /* custom checkbox */
+
 button[role="checkbox"] {
   cursor: pointer;
 }
@@ -761,7 +774,6 @@ button[role="checkbox"] {
 button[role="checkbox"] svg {
   min-width: 1.5rem;
   height: 1.5rem;
-  /* height: 1.5rem; */
 }
 
 button[role="checkbox"]:hover .checkbox--state-default circle,
@@ -771,16 +783,16 @@ button[role="checkbox"]:focus .checkbox--state-default circle {
 }
 
 button[role="checkbox"]:focus {
-  outline: 1px solid var(--s200);
+  outline: 2px solid var(--s200);
   outline-offset: 2px;
 }
 
 .checkbox--state-loading {
-  animation: spin 150ms linear infinite;
+  animation: spin 300ms linear infinite;
 }
 
 .checkbox--state-done {
-  animation: spinGrow 150ms linear;
+  animation: spinGrow 450ms ease;
 }
 
 @keyframes spin {
@@ -795,7 +807,7 @@ button[role="checkbox"]:focus {
 
 @keyframes spinGrow {
   from {
-    transform: scale(0) rotate(200deg);
+    transform: scale(0) rotate(270deg);
     opacity: 0;
   }
   to {
@@ -823,7 +835,8 @@ button[role="checkbox"]:focus {
   width: 0%;
   height: 100%;
   display: block;
-  transition: width 200ms ease-out;
+  border-radius: 0.3rem;
+  transition: width 250ms linear;
   background-color: var(--grey-300);
 }
 
@@ -863,8 +876,12 @@ button[role="checkbox"]:focus {
 }
 
 @media screen and (min-width: 60rem) {
-  .desktop {
+  .visible-desktop {
     display: block;
+  }
+
+  .visible-mobile {
+    display: none;
   }
 
   .store-trigger {
